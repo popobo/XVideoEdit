@@ -42,6 +42,12 @@
     <QtMoc Include="XVideoUI.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="XVideoThread.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="XVideoWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="XVideoUI.ui">
@@ -52,13 +58,5 @@
     <QtRcc Include="XVideoUI.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="XVideoWidget.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="XVideoThread.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
