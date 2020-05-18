@@ -1,25 +1,128 @@
-<UI version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>XVideoUIClass</class>
- <widget class="QWidget" name="XVideoUIClass" >
-  <property name="objectName" >
-   <string notr="true">XVideoUIClass</string>
-  </property>
-  <property name="geometry" >
+ <widget class="QWidget" name="XVideoUIClass">
+  <property name="geometry">
    <rect>
-	<x>0</x>
-	<y>0</y>
-	<width>600</width>
-	<height>400</height>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>720</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>XVideoUI</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">#XVideoUIClass
+{
+	background-color: rgb(50, 50, 50);
+}
+QPushButton:!hover
+{
+	border:none;
+	border-ridus:10px;
+	color: rgb(255, 255, 255);
+	background-color: rgb(76, 76, 76);
+	font: 11pt &quot;黑体&quot;;
+}
+#closeButton
+{
+	font: 11pt &quot;黑体&quot;;
+	color: rgb(255, 255, 255);
+	background-color: rgb(50, 50, 50);
+}
+</string>
+  </property>
+  <widget class="QPushButton" name="closeButton">
+   <property name="geometry">
+    <rect>
+     <x>1230</x>
+     <y>0</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>X</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="XVideoWidget" name="src1Video">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>30</y>
+     <width>551</width>
+     <height>361</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="openButton">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>410</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>打开</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>XVideoWidget</class>
+   <extends>QOpenGLWidget</extends>
+   <header>xvideowidget.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
-   <include location="XVideoUI.qrc"/>
+  <include location="XVideoUI.qrc"/>
  </resources>
- <connections/>
-</UI>
+ <connections>
+  <connection>
+   <sender>closeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>XVideoUIClass</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1262</x>
+     <y>17</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>772</x>
+     <y>-15</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>openButton</sender>
+   <signal>clicked()</signal>
+   <receiver>XVideoUIClass</receiver>
+   <slot>open()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>632</x>
+     <y>421</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>651</x>
+     <y>-23</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>open()</slot>
+ </slots>
+</ui>
